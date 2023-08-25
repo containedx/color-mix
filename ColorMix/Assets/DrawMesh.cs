@@ -4,9 +4,29 @@ using UnityEngine;
 
 public class DrawMesh : MonoBehaviour
 {
+    public Camera camera;
 
-    private void Awake(){
+    private void Awake()
+    {
+        DrawSimpleSquareMesh();
+    }
 
+    private void Update()
+    {
+        transform.position = GetMouseWorldPosition();
+    }
+
+
+    private Vector3 GetMouseWorldPosition()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        Vector3 worldPos = camera.ScreenToWorldPoint(mousePos);
+        worldPos.z = 0f;
+        return worldPos;
+    }
+
+    private void DrawSimpleSquareMesh()
+    {
         Mesh mesh = new Mesh();
 
         Vector3[] vertices = new Vector3[4];
@@ -18,7 +38,7 @@ public class DrawMesh : MonoBehaviour
         vertices[2] = new Vector3(1, -1);
         vertices[3] = new Vector3(1, 1);
 
-        uv[0] = Vector2.zero; 
+        uv[0] = Vector2.zero;
         uv[1] = Vector2.zero;
         uv[2] = Vector2.zero;
         uv[3] = Vector2.zero;
@@ -37,6 +57,5 @@ public class DrawMesh : MonoBehaviour
         mesh.MarkDynamic();
 
         GetComponent<MeshFilter>().mesh = mesh;
-
     }
 }
