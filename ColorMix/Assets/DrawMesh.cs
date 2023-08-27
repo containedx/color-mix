@@ -6,13 +6,23 @@ public class DrawMesh : MonoBehaviour
 {
     public Camera camera;
 
-    private void Awake()
-    {
-        DrawSimpleSquareMesh();
-    }
+    private Mesh mesh;
+
 
     private void Update()
     {
+        //Mouse Pressed
+        if(Input.GetMouseButtonDown(0))
+        {
+            DrawSimpleSquareMesh();
+        }
+
+        //Mouse held down
+        if (Input.GetMouseButton(0))
+        {
+
+        }
+
         transform.position = GetMouseWorldPosition();
     }
 
@@ -27,7 +37,7 @@ public class DrawMesh : MonoBehaviour
 
     private void DrawSimpleSquareMesh()
     {
-        Mesh mesh = new Mesh();
+        mesh = new Mesh();
 
         Vector3[] vertices = new Vector3[4];
         Vector2[] uv = new Vector2[4];
