@@ -8,6 +8,8 @@ public class DrawMesh : MonoBehaviour
 
     public float lineThickness = 1f;
 
+    private float minDistance = 1.0f;
+
     private Mesh mesh;
 
     private Vector3 lastMousePosition;
@@ -23,7 +25,11 @@ public class DrawMesh : MonoBehaviour
         //Mouse held down
         if (Input.GetMouseButton(0))
         {
-            UpdateMesh();
+            if(Vector3.Distance(GetMouseWorldPosition(), lastMousePosition) > minDistance)
+            {
+                UpdateMesh();
+            }
+            
             //transform.position = GetMouseWorldPosition();
         }
     }
@@ -48,10 +54,10 @@ public class DrawMesh : MonoBehaviour
         Vector2[] uv = new Vector2[4];
         int[] triangles = new int[6];
 
-        vertices[0] = new Vector3(-lineThickness, lineThickness);
-        vertices[1] = new Vector3(-lineThickness, -lineThickness);
-        vertices[2] = new Vector3(lineThickness, -lineThickness);
-        vertices[3] = new Vector3(lineThickness, lineThickness);
+        vertices[0] = lastMousePosition; // new Vector3(-lineThickness, lineThickness);
+        vertices[1] = lastMousePosition; // new Vector3(-lineThickness, -lineThickness);
+        vertices[2] = lastMousePosition; // new Vector3(lineThickness, -lineThickness);
+        vertices[3] = lastMousePosition; // new Vector3(lineThickness, lineThickness);
 
         uv[0] = Vector2.zero;
         uv[1] = Vector2.zero;
@@ -112,6 +118,7 @@ public class DrawMesh : MonoBehaviour
         triangles[tIndex + 0] = vId0;
         triangles[tIndex + 1] = vId2;
         triangles[tIndex + 2] = vId1;
+
         triangles[tIndex + 3] = vId1;
         triangles[tIndex + 4] = vId2;
         triangles[tIndex + 5] = vId3;
