@@ -29,6 +29,10 @@ public class GameController : MonoBehaviour
         var g = Random.value;
         var b = Random.value;
 
+        red.setTargetValue(r);
+        green.setTargetValue(g);
+        blue.setTargetValue(b);
+
         background.color = new Color(r, g, b);
         Debug.Log(background.color);
     }

@@ -899,6 +899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 538390190}
+  textPercent: {fileID: 1941195988}
 --- !u!1 &538390188
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,6 +1553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1913487467}
+  textPercent: {fileID: 777743448}
 --- !u!1 &1019856378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1738,6 +1740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 618798181}
+  textPercent: {fileID: 1019856380}
 --- !u!1 &1079860316
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,9 +2965,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   square: {fileID: 664860747}
   background: {fileID: 317723151}
-  red: {fileID: 0}
-  green: {fileID: 0}
-  blue: {fileID: 0}
+  red: {fileID: 859798963}
+  green: {fileID: 1026009941}
+  blue: {fileID: 454906943}
 --- !u!4 &1980164309
 Transform:
   m_ObjectHideFlags: 0
