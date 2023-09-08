@@ -968,9 +968,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 179380820}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 255
-  m_WholeNumbers: 1
-  m_Value: 255
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1058,9 +1058,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6580511}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 255
-  m_WholeNumbers: 1
-  m_Value: 255
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2336,9 +2336,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1743899812}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 255
-  m_WholeNumbers: 1
-  m_Value: 255
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2515,6 +2515,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 664860747}
   background: {fileID: 317723151}
+  red: {fileID: 1913487467}
+  green: {fileID: 618798181}
+  blue: {fileID: 538390190}
 --- !u!4 &1980164309
 Transform:
   m_ObjectHideFlags: 0

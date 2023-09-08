@@ -8,19 +8,38 @@ public class GameController : MonoBehaviour
     public Image img;
     public Image background;
 
+    public Slider red;
+    public Slider green;
+    public Slider blue;
+
+
     private void Start()
     {
         RandomColorBackground();
     }
 
+    private void Update()
+    {
+        UpdateColor();
+    }
+
     public void RandomColorBackground()
     {
-        var red = Random.value;
-        var green = Random.value;
-        var blue = Random.value;
+        var r = Random.value;
+        var g = Random.value;
+        var b = Random.value;
 
-        background.color = new Color(red, green, blue);
+        background.color = new Color(r, g, b);
         Debug.Log(background.color);
+    }
+
+    private void UpdateColor()
+    {
+        var r = red.value;
+        var g = green.value;
+        var b = blue.value;
+
+        img.color = new Color(r, g, b);
     }
 
 }
