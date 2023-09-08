@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    public Image img;
+    public Image square;
     public Image background;
 
     public Slider red;
@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour
         var g = green.value;
         var b = blue.value;
 
-        img.color = new Color(r, g, b);
+        square.color = new Color(r, g, b);
     }
 
 }
