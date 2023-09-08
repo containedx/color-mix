@@ -8,9 +8,9 @@ public class GameController : MonoBehaviour
     public Image square;
     public Image background;
 
-    public Slider red;
-    public Slider green;
-    public Slider blue;
+    public ColorSlider red;
+    public ColorSlider green;
+    public ColorSlider blue;
 
 
     private void Start()
@@ -35,9 +35,9 @@ public class GameController : MonoBehaviour
 
     private void UpdateColor()
     {
-        var r = red.value;
-        var g = green.value;
-        var b = blue.value;
+        var r = red.getValue();
+        var g = green.getValue();
+        var b = blue.getValue();
 
         square.color = new Color(r, g, b);
     }
