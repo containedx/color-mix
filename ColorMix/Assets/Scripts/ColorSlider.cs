@@ -10,7 +10,21 @@ public class ColorSlider : MonoBehaviour
     public TMP_Text textPercent;
 
     private float targetValue;
+    private bool help = false;
 
+
+    private void Start()
+    {
+        ResetPercentage();
+    }
+
+    private void Update()
+    {
+        if (help)
+        {
+            CalculatePercentage();
+        }
+    }
 
     public float getValue()
     {
@@ -22,6 +36,18 @@ public class ColorSlider : MonoBehaviour
         targetValue = value;
     }
 
+    
+    public void ToggleHelp()
+    {
+        help = !help;
+        ResetPercentage();
+    }
+
+    private void ResetPercentage()
+    {
+        textPercent.text = "";
+    }
+
     private void CalculatePercentage()
     {
         var difference = Mathf.Abs(targetValue - slider.value) * 100;
@@ -30,8 +56,4 @@ public class ColorSlider : MonoBehaviour
         textPercent.text = difference + "%";
     }
 
-    private void Update()
-    {
-        CalculatePercentage();
-    }
 }

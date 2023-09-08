@@ -37,6 +37,13 @@ public class GameController : MonoBehaviour
         Debug.Log(background.color);
     }
 
+    public void Help()
+    {
+        red.ToggleHelp();
+        green.ToggleHelp();
+        blue.ToggleHelp();
+    }
+
     private void UpdateColor()
     {
         var r = red.getValue();
