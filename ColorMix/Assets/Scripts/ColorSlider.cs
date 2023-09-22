@@ -11,6 +11,7 @@ public class ColorSlider : MonoBehaviour
 
     private float targetValue;
     private bool help = false;
+    private float percentage;
 
 
     private void Start()
@@ -24,6 +25,16 @@ public class ColorSlider : MonoBehaviour
         {
             CalculatePercentage();
         }
+    }
+
+    public float getPercentage()
+    {
+        return percentage;
+    }
+
+    public float getHowCloseTo100Percent()
+    {
+        return 100 - percentage;
     }
 
     public float getValue()
@@ -54,6 +65,8 @@ public class ColorSlider : MonoBehaviour
         difference = Mathf.Round(difference);
         difference = 100 - difference;
         textPercent.text = difference + "%";
+
+        percentage = difference;
     }
 
 }
