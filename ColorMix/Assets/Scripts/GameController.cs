@@ -94,6 +94,10 @@ public class GameController : MonoBehaviour
 
             ShowSubmit(true);
         }
+        else
+        {
+            ShowSubmit(false);
+        }
     }
 
     public void ShowMenu(bool value)
