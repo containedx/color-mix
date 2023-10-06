@@ -23,7 +23,6 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        ChangeColor();
         ShowMenu(true);
         notification.ShowNotification(false);
     }
@@ -38,6 +37,7 @@ public class GameController : MonoBehaviour
     {
         winThreshold = threshold;
         ShowMenu(false);
+        ChangeColor();
     }
 
     public void ChangeColor()
