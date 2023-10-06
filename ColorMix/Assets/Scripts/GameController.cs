@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
 {
     public GameObject menu;
     public TMP_Text textThreshold;
-    public GameObject notification;
+    public Notification notification;
     public GameObject submitButton;
 
     public Image square;
@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     {
         ChangeColor();
         ShowMenu(true);
-        ShowNotification(false);
+        notification.ShowNotification(false);
     }
 
     private void Update()
@@ -42,7 +42,7 @@ public class GameController : MonoBehaviour
 
     public void ChangeColor()
     {
-        ShowNotification(false);
+        notification.ShowNotification(false);
         ShowSubmit(false);
 
         var r = Random.value;
@@ -66,8 +66,8 @@ public class GameController : MonoBehaviour
 
     public void Submit()
     {
-        ShowNotification(true);
-        notification.GetComponentInChildren<Image>().color = square.color;
+        notification.ShowNotification(true);
+        notification.SetBackgroundColor(square.color);
     }
 
     private void UpdateColor()
@@ -83,6 +83,7 @@ public class GameController : MonoBehaviour
     {
         var difference = red.getHowCloseTo100Percent() + blue.getHowCloseTo100Percent() + green.getHowCloseTo100Percent();
         textThreshold.text = difference + "%";
+        notification.SetScore(100 - (int)difference);
         if( difference <= winThreshold )
         {
             // color matches (at least within given threshold)
@@ -95,14 +96,9 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void ShowMenu(bool value)
+    public void ShowMenu(bool value)
     {
         menu.SetActive(value);
-    }
-
-    private void ShowNotification(bool value)
-    {
-        notification.SetActive(value);
     }
 
     private void ShowSubmit(bool value)
