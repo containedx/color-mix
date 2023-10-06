@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public GameObject menu;
     public TMP_Text textThreshold;
     public GameObject notification;
+    public GameObject submitButton;
 
     public Image square;
     public Image background;
@@ -42,6 +43,7 @@ public class GameController : MonoBehaviour
     public void ChangeColor()
     {
         ShowNotification(false);
+        ShowSubmit(false);
 
         var r = Random.value;
         var g = Random.value;
@@ -62,6 +64,12 @@ public class GameController : MonoBehaviour
         blue.ToggleHelp();
     }
 
+    public void Submit()
+    {
+        ShowNotification(true);
+        notification.GetComponentInChildren<Image>().color = square.color;
+    }
+
     private void UpdateColor()
     {
         var r = red.getValue();
@@ -80,8 +88,10 @@ public class GameController : MonoBehaviour
             // color matches (at least within given threshold)
             //ChangeColor();
 
-            ShowNotification(true);
-            notification.GetComponentInChildren<Image>().color = square.color;
+            //ShowNotification(true);
+            //notification.GetComponentInChildren<Image>().color = square.color;
+
+            ShowSubmit(true);
         }
     }
 
@@ -93,6 +103,11 @@ public class GameController : MonoBehaviour
     private void ShowNotification(bool value)
     {
         notification.SetActive(value);
+    }
+
+    private void ShowSubmit(bool value)
+    {
+        submitButton.SetActive(value);
     }
 
 }
