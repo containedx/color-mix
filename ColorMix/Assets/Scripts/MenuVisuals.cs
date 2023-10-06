@@ -10,7 +10,7 @@ public class MenuVisuals : MonoBehaviour
     public TMP_Text text;
 
     private float time = 0.0f;
-    private float interpolationPeriod = 2.0f;
+    private float interpolationPeriod = 0.5f;
 
     private Color colorB = Color.white;
     private Color invertedColor = Color.black;
